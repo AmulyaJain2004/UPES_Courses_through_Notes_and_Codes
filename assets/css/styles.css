@@ -2,12 +2,3 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
 }
-
-header {
-    background: #f8f9fa;
-    color: #333;
-}
-
-#notes-container .card {
-    margin: 15px 0;
-}
