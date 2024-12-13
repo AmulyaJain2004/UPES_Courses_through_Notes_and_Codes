@@ -14,3 +14,5 @@ This repository includes materials for the following programming courses:
 2. **Python Programming**
 3. **Linux Bash Shell Programming**
 4. **Data Structures and Algorithms**
+5. **Design and Analysis of Algorithms**
+6. **Elements of AIML**
