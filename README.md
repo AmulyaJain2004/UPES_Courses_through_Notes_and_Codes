@@ -16,3 +16,5 @@ This repository includes materials for the following programming courses:
 4. **Data Structures and Algorithms**
 5. **Design and Analysis of Algorithms**
 6. **Elements of AIML**
+7. **Applied Machine Learning**
+8. **Object Oriented Programming with JAVA**
