@@ -1,0 +1,53 @@
+1. Recurrence relation and Recursion
+2. Linear Search
+3. Binary Search 
+4. Merge Sort 
+5. Quick Sort
+6. Insertion Sort
+7. Selection Sort
+8. Bucket Sort
+9. Shell Sort
+10. Radix Sort
+11. Bogo Sort
+12. Count Sort 
+13. Heap Sort
+All implementation using array, linked lists, recurrence and iterative
+14. Strassen Method of Matrix Multiplication
+15. Maximum subarray problem
+16. Powering number
+17. Celebrity problem
+18. General Divide and Conquer Algorithm
+
+19. Knapsack problem
+20. Activity selection problem
+21. Huffman encoding
+22. Interval partitioning problem
+23. Dijkastra algorithm for single source shortest path problem
+24. Prim’s and 25. Kruskal algorithm for finding minimum cost spanning tree
+26. General Greedy algorithm
+
+27. 0/1 Knapsack problem
+28. Matrix chain multiplication problem
+29.  longest common subsequence problem
+30. Optimal binary search problem
+31. Bellman ford algorithm for single source shortest path problem
+32. Travelling salesman problem
+33. Difference between divide and conquer, greedy and dynamic programming algorithm design approach algos
+34. Floyd warshall algorithm for all pair shortest path problem
+
+
+35. backtracking and branch & bound approach algos
+36. N Queen problem
+37. Sum of Subset problem
+38. 0/1 Knapsack problem
+39. FIFO, LIFO, & LC branch & bound
+40. 0/1 Knapsack problem
+41. Travelling salesperson problem
+
+
+42. Ford- Fulkerson method
+43. Maximum bipartite matching
+44. Modulo Representation of integers/polynomials:  Chinese Remainder Theorem
+45. String Matching: The naive string-matching algorithm 46. The Rabin-Karp algorithm, 47. String matching with finite automata, 48. The Knuth-Morris-Pratt algorithm
+49. P, NP, NP Complete, NP Hard, reducibility property
+50. Remaining extras
