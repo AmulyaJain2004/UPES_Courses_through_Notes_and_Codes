@@ -1,0 +1,512 @@
+Microsoft Windows [Version 10.0.26100.2605]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\hp>arp
+
+Displays and modifies the IP-to-Physical address translation tables used by
+address resolution protocol (ARP).
+
+ARP -s inet_addr eth_addr [if_addr]
+ARP -d inet_addr [if_addr]
+ARP -a [inet_addr] [-N if_addr] [-v]
+
+  -a            Displays current ARP entries by interrogating the current
+                protocol data.  If inet_addr is specified, the IP and Physical
+                addresses for only the specified computer are displayed.  If
+                more than one network interface uses ARP, entries for each ARP
+                table are displayed.
+  -g            Same as -a.
+  -v            Displays current ARP entries in verbose mode.  All invalid
+                entries and entries on the loop-back interface will be shown.
+  inet_addr     Specifies an internet address.
+  -N if_addr    Displays the ARP entries for the network interface specified
+                by if_addr.
+  -d            Deletes the host specified by inet_addr. inet_addr may be
+                wildcarded with * to delete all hosts.
+  -s            Adds the host and associates the Internet address inet_addr
+                with the Physical address eth_addr.  The Physical address is
+                given as 6 hexadecimal bytes separated by hyphens. The entry
+                is permanent.
+  eth_addr      Specifies a physical address.
+  if_addr       If present, this specifies the Internet address of the
+                interface whose address translation table should be modified.
+                If not present, the first applicable interface will be used.
+Example:
+  > arp -s 157.55.85.212   00-aa-00-62-c6-09  .... Adds a static entry.
+  > arp -a                                    .... Displays the arp table.
+
+C:\Users\hp>ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::a783:8438:4d58:b326%15
+   IPv4 Address. . . . . . . . . . . : 192.168.56.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Wireless LAN adapter Local Area Connection* 3:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 4:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : ddn.upes.ac.in
+   Link-local IPv6 Address . . . . . : fe80::896e:72b8:90c6:45ec%25
+   IPv4 Address. . . . . . . . . . . : 10.7.4.44
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 10.7.1.1
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+C:\Users\hp>ipconfig -all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : LAPTOP-NR7V70K6
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : ddn.upes.ac.in
+
+Ethernet adapter Ethernet 3:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : VirtualBox Host-Only Ethernet Adapter
+   Physical Address. . . . . . . . . : 0A-00-27-00-00-0F
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::a783:8438:4d58:b326%15(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.56.1(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+   DHCPv6 IAID . . . . . . . . . . . : 889847847
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2E-F0-E4-E4-1C-CE-51-1F-34-9C
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Wireless LAN adapter Local Area Connection* 3:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #5
+   Physical Address. . . . . . . . . : 1E-CE-51-1F-34-9C
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 4:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #6
+   Physical Address. . . . . . . . . : 12-CE-51-1F-34-9C
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : ddn.upes.ac.in
+   Description . . . . . . . . . . . : Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter
+   Physical Address. . . . . . . . . : 1C-CE-51-1F-34-9C
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::896e:72b8:90c6:45ec%25(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.7.4.44(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Lease Obtained. . . . . . . . . . : 09 January 2025 12:38:34
+   Lease Expires . . . . . . . . . . : 17 January 2025 12:38:34
+   Default Gateway . . . . . . . . . : 10.7.1.1
+   DHCP Server . . . . . . . . . . . : 10.2.1.8
+   DHCPv6 IAID . . . . . . . . . . . : 186437201
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2E-F0-E4-E4-1C-CE-51-1F-34-9C
+   DNS Servers . . . . . . . . . . . : 10.2.1.60
+                                       10.2.1.61
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Physical Address. . . . . . . . . : 1C-CE-51-1F-34-9D
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+C:\Users\hp>arp -a
+
+Interface: 192.168.56.1 --- 0xf
+  Internet Address      Physical Address      Type
+  192.168.56.255        ff-ff-ff-ff-ff-ff     static
+  224.0.0.2             01-00-5e-00-00-02     static
+  224.0.0.9             01-00-5e-00-00-09     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+Interface: 10.7.4.44 --- 0x19
+  Internet Address      Physical Address      Type
+  10.7.1.1              54-77-8a-93-44-4e     dynamic
+  10.7.1.67             30-05-05-0f-bd-ce     dynamic
+  10.7.1.81             08-49-86-f9-fb-ca     dynamic
+  10.7.1.99             14-13-33-39-cb-8b     dynamic
+  10.7.1.104            28-39-26-e4-de-43     dynamic
+  10.7.1.111            58-1c-f8-c6-a5-11     dynamic
+  10.7.1.116            74-4c-a1-78-1c-9b     dynamic
+  10.7.1.119            7c-70-db-63-87-0b     dynamic
+  10.7.1.125            98-bd-80-21-29-74     dynamic
+  10.7.1.145            14-13-33-62-1a-c3     dynamic
+  10.7.1.146            40-1a-58-0c-54-d6     dynamic
+  10.7.1.157            30-03-c8-01-26-63     dynamic
+  10.7.1.170            70-32-17-d9-63-ae     dynamic
+  10.7.1.178            a8-93-4a-cc-4b-5d     dynamic
+  10.7.1.243            28-cd-c4-46-7d-a3     dynamic
+  10.7.2.153            70-66-55-c3-9d-01     dynamic
+  10.7.2.157            b4-69-21-d1-0b-b4     dynamic
+  10.7.2.169            7c-76-35-bc-ea-26     dynamic
+  10.7.2.238            60-dd-8e-5d-25-82     dynamic
+  10.7.2.241            a0-29-42-40-33-23     dynamic
+  10.7.3.199            e8-65-38-3e-6f-e3     dynamic
+  10.7.3.220            1c-ce-51-10-f3-6c     dynamic
+  10.7.10.17            30-03-c8-41-17-1b     dynamic
+  10.7.255.255          ff-ff-ff-ff-ff-ff     static
+  224.0.0.2             01-00-5e-00-00-02     static
+  224.0.0.9             01-00-5e-00-00-09     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+C:\Users\hp>ping 10.7.1.104
+
+Pinging 10.7.1.104 with 32 bytes of data:
+Reply from 10.7.1.104: bytes=32 time=38ms TTL=128
+Reply from 10.7.1.104: bytes=32 time=12ms TTL=128
+Reply from 10.7.1.104: bytes=32 time=4ms TTL=128
+Reply from 10.7.1.104: bytes=32 time=21ms TTL=128
+
+Ping statistics for 10.7.1.104:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 4ms, Maximum = 38ms, Average = 18ms
+
+C:\Users\hp>ping www.google.com
+
+Pinging www.google.com [142.250.182.196] with 32 bytes of data:
+Reply from 142.250.182.196: bytes=32 time=34ms TTL=116
+Reply from 142.250.182.196: bytes=32 time=34ms TTL=116
+Reply from 142.250.182.196: bytes=32 time=29ms TTL=116
+Reply from 142.250.182.196: bytes=32 time=30ms TTL=116
+
+Ping statistics for 142.250.182.196:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 29ms, Maximum = 34ms, Average = 31ms
+
+C:\Users\hp>trace rt
+'trace' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\hp>tracert
+
+Usage: tracert [-d] [-h maximum_hops] [-j host-list] [-w timeout]
+               [-R] [-S srcaddr] [-4] [-6] target_name
+
+Options:
+    -d                 Do not resolve addresses to hostnames.
+    -h maximum_hops    Maximum number of hops to search for target.
+    -j host-list       Loose source route along host-list (IPv4-only).
+    -w timeout         Wait timeout milliseconds for each reply.
+    -R                 Trace round-trip path (IPv6-only).
+    -S srcaddr         Source address to use (IPv6-only).
+    -4                 Force using IPv4.
+    -6                 Force using IPv6.
+
+C:\Users\hp>tracert 142.250.182.196
+
+Tracing route to bom07s28-in-f4.1e100.net [142.250.182.196]
+over a maximum of 30 hops:
+
+  1     *        *        *     Request timed out.
+  2     4 ms     3 ms     3 ms  10.20.20.15
+  3     4 ms     4 ms     3 ms  103.182.161.1
+  4     *        *        *     Request timed out.
+  5     9 ms    12 ms    10 ms  103.47.14.157
+  6    15 ms    12 ms     7 ms  103.225.205.2
+  7    23 ms    11 ms    11 ms  142.251.71.163
+  8     9 ms     9 ms    19 ms  216.239.62.218
+  9    14 ms    12 ms    12 ms  142.250.63.116
+ 10    49 ms    30 ms    29 ms  142.251.53.180
+ 11    35 ms    27 ms    28 ms  192.178.110.249
+ 12    38 ms    37 ms    34 ms  142.250.214.99
+ 13    34 ms    26 ms    27 ms  bom07s28-in-f4.1e100.net [142.250.182.196]
+
+Trace complete.
+
+C:\Users\hp>ping 142.250.182.196
+
+Pinging 142.250.182.196 with 32 bytes of data:
+Reply from 142.250.182.196: bytes=32 time=26ms TTL=116
+Reply from 142.250.182.196: bytes=32 time=27ms TTL=116
+Reply from 142.250.182.196: bytes=32 time=61ms TTL=116
+Reply from 142.250.182.196: bytes=32 time=27ms TTL=116
+
+Ping statistics for 142.250.182.196:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 26ms, Maximum = 61ms, Average = 35ms
+
+C:\Users\hp>
+C:\Users\hp>nslookup
+Default Server:  UnKnown
+Address:  10.2.1.60
+
+> www.google.com
+Server:  UnKnown
+Address:  10.2.1.60
+
+Non-authoritative answer:
+Name:    www.google.com
+Addresses:  2404:6800:4002:821::2004
+          142.250.194.100
+
+> www.facebook.com
+Server:  UnKnown
+Address:  10.2.1.60
+
+Non-authoritative answer:
+Name:    star-mini.c10r.facebook.com
+Addresses:  2a03:2880:f33e:8:face:b00c:0:25de
+          57.144.124.1
+Aliases:  www.facebook.com
+
+> quit
+
+C:\Users\hp>route print
+===========================================================================
+Interface List
+ 15...0a 00 27 00 00 0f ......VirtualBox Host-Only Ethernet Adapter
+ 23...1e ce 51 1f 34 9c ......Microsoft Wi-Fi Direct Virtual Adapter #5
+ 16...12 ce 51 1f 34 9c ......Microsoft Wi-Fi Direct Virtual Adapter #6
+ 25...1c ce 51 1f 34 9c ......Realtek RTL8852BE WiFi 6 802.11ax PCIe Adapter
+ 10...1c ce 51 1f 34 9d ......Bluetooth Device (Personal Area Network)
+  1...........................Software Loopback Interface 1
+===========================================================================
+
+IPv4 Route Table
+===========================================================================
+Active Routes:
+Network Destination        Netmask          Gateway       Interface  Metric
+          0.0.0.0          0.0.0.0         10.7.1.1        10.7.4.44     35
+         10.7.0.0      255.255.0.0         On-link         10.7.4.44    291
+        10.7.4.44  255.255.255.255         On-link         10.7.4.44    291
+     10.7.255.255  255.255.255.255         On-link         10.7.4.44    291
+        127.0.0.0        255.0.0.0         On-link         127.0.0.1    331
+        127.0.0.1  255.255.255.255         On-link         127.0.0.1    331
+  127.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+     192.168.56.0    255.255.255.0         On-link      192.168.56.1    281
+     192.168.56.1  255.255.255.255         On-link      192.168.56.1    281
+   192.168.56.255  255.255.255.255         On-link      192.168.56.1    281
+        224.0.0.0        240.0.0.0         On-link         127.0.0.1    331
+        224.0.0.0        240.0.0.0         On-link      192.168.56.1    281
+        224.0.0.0        240.0.0.0         On-link         10.7.4.44    291
+  255.255.255.255  255.255.255.255         On-link         127.0.0.1    331
+  255.255.255.255  255.255.255.255         On-link      192.168.56.1    281
+  255.255.255.255  255.255.255.255         On-link         10.7.4.44    291
+===========================================================================
+Persistent Routes:
+  None
+
+IPv6 Route Table
+===========================================================================
+Active Routes:
+ If Metric Network Destination      Gateway
+  1    331 ::1/128                  On-link
+ 15    281 fe80::/64                On-link
+ 25    291 fe80::/64                On-link
+ 25    291 fe80::896e:72b8:90c6:45ec/128
+                                    On-link
+ 15    281 fe80::a783:8438:4d58:b326/128
+                                    On-link
+  1    331 ff00::/8                 On-link
+ 15    281 ff00::/8                 On-link
+ 25    291 ff00::/8                 On-link
+===========================================================================
+Persistent Routes:
+  None
+
+C:\Users\hp>netstat
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    10.7.4.44:49409        20.198.119.84:https    ESTABLISHED
+  TCP    10.7.4.44:50499        4.195.15.176:https     ESTABLISHED
+  TCP    10.7.4.44:50503        20.198.118.190:https   ESTABLISHED
+  TCP    10.7.4.44:50511        20.195.84.23:https     ESTABLISHED
+  TCP    10.7.4.44:50520        150.171.85.254:https   CLOSE_WAIT
+  TCP    10.7.4.44:50521        48.218.107.37:https    ESTABLISHED
+  TCP    10.7.4.44:50558        sc-in-f188:https       ESTABLISHED
+  TCP    10.7.4.44:50567        20.212.88.117:https    ESTABLISHED
+  TCP    10.7.4.44:50616        52.98.123.226:https    ESTABLISHED
+  TCP    10.7.4.44:50631        13.107.253.68:https    CLOSE_WAIT
+  TCP    10.7.4.44:50641        lb-140-82-114-26-iad:https  ESTABLISHED
+  TCP    10.7.4.44:50648        a23-57-74-16:https     CLOSE_WAIT
+  TCP    10.7.4.44:50652        40.99.111.34:https     ESTABLISHED
+  TCP    10.7.4.44:50653        whatsapp-chatd-edge-shv-02-bom1:5222  ESTABLISHED
+  TCP    10.7.4.44:50663        117.18.232.200:https   CLOSE_WAIT
+  TCP    10.7.4.44:50679        151.101.65.229:https   ESTABLISHED
+  TCP    10.7.4.44:50685        151.101.2.137:https    ESTABLISHED
+  TCP    10.7.4.44:50697        130:https              ESTABLISHED
+  TCP    10.7.4.44:50700        180.149.52.211:https   ESTABLISHED
+  TCP    10.7.4.44:50711        server-18-164-232-220:https  ESTABLISHED
+  TCP    10.7.4.44:50737        ec2-54-169-90-152:https  ESTABLISHED
+  TCP    10.7.4.44:50741        static:https           ESTABLISHED
+  TCP    10.7.4.44:50752        104.22.31.209:https    ESTABLISHED
+  TCP    10.7.4.44:50770        69.173.158.92:https    ESTABLISHED
+  TCP    10.7.4.44:50863        8:https                ESTABLISHED
+  TCP    10.7.4.44:50870        90:https               ESTABLISHED
+  TCP    10.7.4.44:50896        69.173.158.64:https    TIME_WAIT
+  TCP    10.7.4.44:50980        90:https               ESTABLISHED
+  TCP    10.7.4.44:50982        150:https              ESTABLISHED
+  TCP    10.7.4.44:50983        69.173.146.5:https     TIME_WAIT
+  TCP    10.7.4.44:51008        104.26.1.74:https      ESTABLISHED
+  TCP    10.7.4.44:51009        158:https              ESTABLISHED
+  TCP    10.7.4.44:51017        62:https               ESTABLISHED
+  TCP    10.7.4.44:51067        103:https              ESTABLISHED
+  TCP    10.7.4.44:51097        151.101.65.44:https    ESTABLISHED
+  TCP    10.7.4.44:51105        69.173.158.64:https    TIME_WAIT
+  TCP    10.7.4.44:51131        8:https                ESTABLISHED
+  TCP    10.7.4.44:51158        67.199.150.77:https    TIME_WAIT
+  TCP    10.7.4.44:51184        76:https               ESTABLISHED
+  TCP    10.7.4.44:51186        151.101.194.49:https   ESTABLISHED
+  TCP    10.7.4.44:51201        69.173.158.64:https    TIME_WAIT
+  TCP    10.7.4.44:51231        62:https               ESTABLISHED
+  TCP    10.7.4.44:51267        104.26.13.223:https    ESTABLISHED
+  TCP    10.7.4.44:51329        del11s21-in-f2:https   TIME_WAIT
+  TCP    10.7.4.44:51378        49:https               ESTABLISHED
+  TCP    10.7.4.44:51405        216.46.185.182:https   TIME_WAIT
+  TCP    10.7.4.44:51408        172.67.40.173:https    ESTABLISHED
+  TCP    10.7.4.44:51417        1:https                ESTABLISHED
+  TCP    10.7.4.44:51425        216.46.185.184:https   TIME_WAIT
+  TCP    10.7.4.44:51438        81:https               ESTABLISHED
+  TCP    10.7.4.44:51494        del11s21-in-f14:https  TIME_WAIT
+  TCP    10.7.4.44:51501        del12s08-in-f2:https   TIME_WAIT
+  TCP    10.7.4.44:51502        del11s17-in-f2:https   TIME_WAIT
+  TCP    10.7.4.44:51506        del12s07-in-f6:https   TIME_WAIT
+  TCP    10.7.4.44:51511        del11s21-in-f2:https   TIME_WAIT
+  TCP    10.7.4.44:51512        del11s08-in-f2:https   TIME_WAIT
+  TCP    10.7.4.44:51515        del12s10-in-f2:https   TIME_WAIT
+  TCP    10.7.4.44:51522        del11s08-in-f3:https   TIME_WAIT
+  TCP    10.7.4.44:51545        del11s21-in-f3:https   TIME_WAIT
+  TCP    10.7.4.44:51553        143:https              ESTABLISHED
+  TCP    10.7.4.44:51562        20.189.173.6:https     TIME_WAIT
+  TCP    10.7.4.44:51576        20.189.173.4:https     TIME_WAIT
+  TCP    10.7.4.44:51580        bom12s19-in-f3:http    TIME_WAIT
+  TCP    10.7.4.44:51581        a23-57-240-163:http    TIME_WAIT
+  TCP    10.7.4.44:51582        a23-15-34-96:http      TIME_WAIT
+  TCP    10.7.4.44:51583        20.189.173.13:https    TIME_WAIT
+  TCP    10.7.4.44:51593        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51594        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51595        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51596        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51597        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51598        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51599        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51600        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51604        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51605        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51606        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51607        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51610        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51611        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51612        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51613        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51614        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51615        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51616        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51617        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51618        8.2.110.48:https       TIME_WAIT
+  TCP    10.7.4.44:51619        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51620        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51621        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51623        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51624        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51625        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51626        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51627        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51628        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51630        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51631        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51632        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51633        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51634        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51635        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51636        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51637        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51638        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51639        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51646        ns1003353:https        ESTABLISHED
+  TCP    10.7.4.44:51649        69.173.158.65:https    TIME_WAIT
+  TCP    10.7.4.44:51652        a23-59-77-155:https    ESTABLISHED
+  TCP    10.7.4.44:51663        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51664        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51666        152.199.43.48:https    ESTABLISHED
+  TCP    10.7.4.44:51667        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51668        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51669        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51670        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51671        103.180.115.15:https   ESTABLISHED
+  TCP    10.7.4.44:51676        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51677        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51678        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51679        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51681        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51683        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51684        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51685        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51686        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51687        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51688        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51695        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51696        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51697        104.18.32.47:https     ESTABLISHED
+  TCP    10.7.4.44:51700        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51701        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51703        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51704        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51705        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51706        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51707        104.18.32.47:https     ESTABLISHED
+  TCP    10.7.4.44:51709        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51710        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51711        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51712        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51713        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51714        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51715        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51716        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51717        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51719        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51720        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51721        ec2-3-224-115-36:https  ESTABLISHED
+  TCP    10.7.4.44:51722        ec2-3-224-115-36:https  ESTABLISHED
+  TCP    10.7.4.44:51723        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51724        10.2.1.61:domain       TIME_WAIT
+  TCP    10.7.4.44:51725        ec2-3-233-158-25:https  ESTABLISHED
+  TCP    10.7.4.44:51726        ec2-3-233-158-25:https  ESTABLISHED
+  TCP    10.7.4.44:51727        10.2.1.61:domain       TIME_WAIT
