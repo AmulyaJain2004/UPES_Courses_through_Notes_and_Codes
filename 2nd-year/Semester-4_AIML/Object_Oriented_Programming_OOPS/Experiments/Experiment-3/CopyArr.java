@@ -1,0 +1,3 @@
+class CopyArr {
+    public 
+}
