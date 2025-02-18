@@ -8,7 +8,7 @@ class SuperCls {
 
 class SubCls extends SuperCls {
     public void display() {
-        System.out.println("num is: " + num); // Error: num has private access in SuperCls
+        // System.out.println("num is: " + num); // Error: num has private access in SuperCls
     }
     public static void main(String[] args) {
         SubCls obj = new SubCls();
