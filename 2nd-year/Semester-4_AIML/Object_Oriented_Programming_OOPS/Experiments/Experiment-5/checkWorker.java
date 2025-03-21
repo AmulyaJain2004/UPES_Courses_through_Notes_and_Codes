@@ -34,9 +34,10 @@ class SalariedWorker extends Worker {
 }
 
 class checkWorker {
-    Worker w1 = new DailyWorker("John", 500);
-    Worker w2 = new SalariedWorker("Alice", 600);
-
-    // System.out.println("Daily Worker Salary: " + w1.computePay(40));
-    // System.out.println("Salaried Worker Salary: " + w2.computePay(50));
+    public static void main(String[] args) {
+        Worker w1 = new DailyWorker("John", 500);
+        Worker w2 = new SalariedWorker("Alice", 600);
+        System.out.println("Daily Worker Salary: " + w1.computePay(40));
+        System.out.println("Salaried Worker Salary: " + w2.computePay(50));
+    }
 }
