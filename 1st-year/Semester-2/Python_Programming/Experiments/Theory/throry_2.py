@@ -1,0 +1,22 @@
+roll_number = (1,2,3,4,5)
+print(type(roll_number))
+student = (1,'sajal','first_year',86.4)
+print(student)
+print(type(student))
+
+first = (1,2,3)
+second = (4,5,6,8.9)
+
+print("len(first):",len(first))
+print("len(second):",len(second))
+print("min(first):",min(first))
+print("max(first):",max(first))
+print("min(second):",min(second))
+print("max(second):",max(second))
+print("first + second:",first+second)
+
+print("first*3:",first*3)
+print("2 in First:", 2 in first)
+print("6 in First:", 6 in first)
+print("7 not in First:", 7 not in first)
+print("3 not in First:", 3 not in first)
