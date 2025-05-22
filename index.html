@@ -170,15 +170,45 @@
     <!-- Custom JS -->
     <script src="public/js/script.js"></script>
     <script>
-        // Intro Animation Script
-        setTimeout(() => {
-            document.querySelector('.intro-container').classList.add('exit');
+        // Intro Animation Script with localStorage check
+        function shouldShowIntro() {
+            const lastShown = localStorage.getItem('introLastShown');
+            const currentTime = new Date().getTime();
+            const hoursToWait = 4; // Show intro again after 4 hours
+            
+            if (!lastShown) {
+                // First time visit
+                localStorage.setItem('introLastShown', currentTime);
+                return true;
+            }
+            
+            const hoursSinceLastShown = (currentTime - parseInt(lastShown)) / (1000 * 60 * 60);
+            if (hoursSinceLastShown >= hoursToWait) {
+                // Update last shown time
+                localStorage.setItem('introLastShown', currentTime);
+                return true;
+            }
+            
+            return false;
+        }
+
+        // Check if we should show the intro
+        if (!shouldShowIntro()) {
+            // Skip intro animation
+            document.querySelector('.intro-container').style.display = 'none';
+            document.querySelector('.main-content-wrapper').style.display = 'block';
+            document.body.classList.remove('intro-active');
+        } else {
+            // Show intro animation
             setTimeout(() => {
-                document.querySelector('.intro-container').style.display = 'none';
-                document.querySelector('.main-content-wrapper').style.display = 'block';
-                document.body.classList.remove('intro-active');
-            }, 1400);
-        }, 3400);
+                document.querySelector('.intro-container').classList.add('exit');
+                setTimeout(() => {
+                    document.querySelector('.intro-container').style.display = 'none';
+                    document.querySelector('.main-content-wrapper').style.display = 'block';
+                    document.body.classList.remove('intro-active');
+                }, 1400);
+            }, 3400);
+        }
     </script>
 </body>
 </html> 
