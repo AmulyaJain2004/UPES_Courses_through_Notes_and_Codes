@@ -8,10 +8,11 @@ let repositoryStructure = {
     }
 };
 
+const BASE_URL = "https://upes-courses-through-notes-and-codes.onrender.com";
 // Function to fetch contents from a GitHub directory
 async function fetchDirectoryContents(dirPath = '') {
     try {
-        const response = await fetch(`http://localhost:8000/getNotes?dirPath=${dirPath}`);
+        const response = await fetch(`${BASE_URL}/getNotes?dirPath=${dirPath}`);
         if (!response.ok) {
             // Handle cases like directory not found or API limits
             console.error(`Error fetching contents from ${url}: ${response.status}`);

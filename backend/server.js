@@ -9,7 +9,9 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 // Allow CORS for your frontend
-app.use(cors());
+app.use(cors({ 
+  origin: "https://amulyajain2004.github.io" 
+}));
 
 const token = process.env.PERSONAL_ACCESS_TOKEN;
 
