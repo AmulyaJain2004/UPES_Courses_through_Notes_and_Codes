@@ -2,3 +2,5 @@ __pycache__
 *.class
 .vscode/
 TODO.txt
+node_modules/
+.env
