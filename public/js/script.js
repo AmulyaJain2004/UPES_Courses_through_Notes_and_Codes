@@ -52,7 +52,7 @@ async function buildRepositoryStructure() {
                              if (semesterItem.type === 'dir') { // Assuming courses are directories
                                 courses.push({ name: semesterItem.name, path: semesterItem.html_url });
                              }
-                             // You might want to handle individual files in semesters too if they represent course materials
+                             // We can handle individual files in semesters too if they represent course materials
                              // else if (semesterItem.type === 'file') {
                              //     courses.push({ name: semesterItem.name, path: semesterItem.html_url });
                              // }
@@ -304,10 +304,21 @@ function setupDarkModeToggle() {
     const body = document.body;
     const darkModeLabel = document.getElementById('darkModeLabel');
 
-    if (!darkModeToggle || !body || !darkModeLabel) return; // Exit if elements not found
+    console.log('Dark mode elements:', { darkModeToggle, body, darkModeLabel });
+
+    if (!darkModeToggle || !body || !darkModeLabel) {
+        console.error('Dark mode elements not found:', { 
+            darkModeToggle: !!darkModeToggle, 
+            body: !!body, 
+            darkModeLabel: !!darkModeLabel 
+        });
+        return;
+    }
 
     // Check for saved theme preference
     const currentTheme = localStorage.getItem('theme');
+    console.log('Current theme from localStorage:', currentTheme);
+    
     if (currentTheme === 'dark') {
         body.classList.add('dark-mode');
         darkModeToggle.checked = true;
@@ -317,6 +328,7 @@ function setupDarkModeToggle() {
     }
 
     darkModeToggle.addEventListener('change', () => {
+        console.log('Dark mode toggle changed:', darkModeToggle.checked);
         if (darkModeToggle.checked) {
             body.classList.add('dark-mode');
             localStorage.setItem('theme', 'dark');

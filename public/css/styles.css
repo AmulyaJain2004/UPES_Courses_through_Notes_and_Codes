@@ -13,24 +13,28 @@
     --border-color-light: rgba(0, 0, 0, 0.05);
     --navbar-bg-light: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 
-    /* Dark Mode Colors */
-    --primary-color-dark: #7e57c2; /* Lighter Purple */
-    --secondary-color-dark: #42a5f5; /* Lighter Blue */
-    --accent-color-dark: #ffd54f; /* Lighter Orange/Yellow */
-    --text-primary-dark: #E0E0E0; /* Light Text - Recommended */
-    --text-secondary-dark: #b0bec5; /* Slightly darker light text */
-    --background-dark: #121212; /* Clean, modern dark mode base - Recommended */
-    --card-background-dark: rgba(30, 30, 30, 0.8); /* Card / secondary background with slight transparency */
-    --card-shadow-dark: 0 6px 20px rgba(0, 0, 0, 0.7); /* More pronounced and darker shadow */
-    --hover-shadow-dark: 0 12px 30px rgba(0, 0, 0, 0.8); /* More pronounced and darker hover shadow */
-    --border-color-dark: rgba(255, 255, 255, 0.15); /* Lighter border for dark mode */
-    --navbar-bg-dark: linear-gradient(to right, #1a237e, #0d47a1); /* Keep previous dark navbar gradient */
-    --link-color-dark: #90CAF9; /* Lighter blue for links in dark mode */
-    --footer-bg-dark: #1E1E1E; /* Soft dark gray for footer */
+    /* Dark Mode Colors - Updated for better readability */
+    --primary-color-dark: #9c7bff; /* Brighter Purple for better visibility */
+    --secondary-color-dark: #64b5f6; /* Brighter Blue for better visibility */
+    --accent-color-dark: #ffd54f; /* Bright Yellow for emphasis */
+    --text-primary-dark: #ffffff; /* Pure white for maximum readability */
+    --text-secondary-dark: #e0e0e0; /* Light gray for secondary text */
+    --background-dark: #1a1a1a; /* Slightly lighter dark background */
+    --card-background-dark: #2d2d2d; /* Distinct card background */
+    --card-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --hover-shadow-dark: 0 8px 24px rgba(0, 0, 0, 0.6);
+    --border-color-dark: rgba(255, 255, 255, 0.1);
+    --navbar-bg-dark: linear-gradient(to right, #2c2c2c, #1a1a1a); /* Subtle gradient */
+    --link-color-dark: #90caf9; /* Bright blue for links */
+    --footer-bg-dark: #2d2d2d; /* Matching card background */
+    --input-bg-dark: #333333; /* Dark input background */
+    --input-border-dark: #404040; /* Dark input border */
+    --accordion-bg-dark: #2d2d2d; /* Dark accordion background */
+    --accordion-hover-dark: #363636; /* Dark accordion hover state */
 
     /* Additional Colors/Gradients */
     --hero-gradient-light: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-    --hero-gradient-dark: linear-gradient(135deg, #263238 0%, #37474f 100%);
+    --hero-gradient-dark: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
     --navbar-vibrant-gradient: linear-gradient(to right, #0377B7, #24BEE8, #F44669);
 }
 
@@ -51,6 +55,10 @@
     perspective: 1500px;
     overflow: hidden;
     transition: filter 1.4s ease, opacity 1.4s ease;
+}
+
+body.dark-mode .intro-container {
+    background: var(--background-dark);
 }
 
 .intro-container.exit {
@@ -162,8 +170,14 @@
     display: none;
     overflow-y: auto;
     min-height: 100vh;
-    background: var(--bg-color, #fff);
-    color: var(--text-color, #000);
+    background: var(--background-light);
+    color: var(--text-primary-light);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode .main-content-wrapper {
+    background: var(--background-dark);
+    color: var(--text-primary-dark);
 }
 
 /* Intro Animation Keyframes */
@@ -271,16 +285,34 @@ body.dark-mode .nav-link:hover {
 /* Hero Section Styling */
 .hero-section {
     background: var(--hero-gradient-light);
-    padding: 6rem 20px; /* Vertical padding and some horizontal padding */
+    padding: 6rem 20px;
     margin-bottom: 3rem;
     transition: background 0.5s ease;
     text-align: center;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 body.dark-mode .hero-section {
     background: var(--hero-gradient-dark);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+}
+
+body.dark-mode .hero-section::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .hero-section .container {
@@ -329,17 +361,18 @@ body.dark-mode .main-content-section {
     border-radius: 15px;
     padding: 2rem;
     box-shadow: var(--card-shadow-light);
-    /* margin-top: 2rem; Keep margin bottom from hero section */
-    backdrop-filter: blur(10px); /* Enhanced Glassmorphism effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
-    border: 1px solid rgba(255, 255, 255, 0.18); /* Glassmorphism border */
-    transition: background 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.5s ease;
 }
 
 body.dark-mode .search-container {
     background: var(--card-background-dark);
     box-shadow: var(--card-shadow-dark);
     border: 1px solid var(--border-color-dark);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 #searchInput {
@@ -358,14 +391,14 @@ body.dark-mode .search-container {
 }
 
 body.dark-mode #searchInput {
-    background-color: #37474f; /* Keep a slightly different input background in dark mode */
+    background-color: var(--input-bg-dark);
     color: var(--text-primary-dark);
-    border-color: var(--border-color-dark);
+    border-color: var(--input-border-dark);
 }
 
 body.dark-mode #searchInput:focus {
     border-color: var(--primary-color-dark);
-    box-shadow: 0 0 0 0.2rem rgba(126, 87, 194, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(156, 123, 255, 0.25);
 }
 
 #searchButton {
@@ -410,9 +443,9 @@ body.dark-mode #searchButton:hover {
 }
 
 body.dark-mode .accordion-button {
-    background: var(--card-background-dark);
+    background: var(--accordion-bg-dark);
     color: var(--text-primary-dark);
-    box-shadow: var(--card-shadow-dark);
+    border-color: var(--border-color-dark);
 }
 
 .accordion-button:not(.collapsed) {
@@ -422,7 +455,7 @@ body.dark-mode .accordion-button {
 
 body.dark-mode .accordion-button:not(.collapsed) {
      background: linear-gradient(to right, var(--primary-color-dark), var(--secondary-color-dark));
-     color: white; /* Ensure text is light on dark gradient */
+     color: var(--text-primary-dark);
 }
 
 .accordion-button:focus {
@@ -459,8 +492,8 @@ body.dark-mode .accordion-button:not(.collapsed)::after {
 }
 
 body.dark-mode .accordion-body {
-    background-color: #37474f; /* Darker background for accordion body */
-     color: var(--text-primary-dark);
+    background-color: var(--card-background-dark);
+    color: var(--text-primary-dark);
 }
 
 /* Course cards */
@@ -635,7 +668,7 @@ footer {
 
 body.dark-mode footer {
     background: var(--footer-bg-dark); /* Use soft dark gray for footer */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border-color-dark);
 }
 
 footer p {
@@ -672,7 +705,7 @@ body.dark-mode footer a:hover {
 }
 
 body.dark-mode ::-webkit-scrollbar-track {
-    background: #455a64;
+    background: var(--card-background-dark);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -686,11 +719,7 @@ body.dark-mode ::-webkit-scrollbar-thumb {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-color);
-}
-
-body.dark-mode ::-webkit-scrollbar-thumb:hover {
-     background: var(--secondary-color-dark);
+    background: var(--secondary-color-dark);
 }
 
 /* Responsive adjustments */
@@ -806,13 +835,36 @@ body.dark-mode .accordion-button:hover {
     max-width: 800px; /* Limit width for better readability */
 }
 
-/* Adjust padding for the full-width hero section */
-.hero-section {
-    background: var(--hero-gradient-light);
-    padding: 6rem 20px; /* Vertical padding and some horizontal padding */
-    margin-bottom: 3rem;
-    transition: background 0.5s ease;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
+/* Resources Section */
+#resources {
+    background: var(--background-light);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode #resources {
+    background: var(--card-background-dark);
+    box-shadow: var(--card-shadow-dark);
+}
+
+#refreshResources {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #refreshResources {
+    background: var(--primary-color-dark);
+    color: var(--text-primary-dark);
+}
+
+#refreshResources:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+body.dark-mode #refreshResources:hover {
+    background: var(--secondary-color-dark);
 } 
