@@ -351,9 +351,10 @@ body.dark-mode .main-content-section {
     background-color: var(--card-background-dark); /* Use card background for dark mode */
 }
 
-.main-content-section .container {
-    /* The inner container will provide horizontal padding and centering */
+/* The inner container will provide horizontal padding and centering */
+/* .main-content-section .container {   
 }
+ */
 
 /* Search section styling */
 .search-container {
@@ -838,7 +839,6 @@ body.dark-mode .accordion-button:hover {
 /* Resources Section */
 #resources {
     background: var(--background-light);
-    padding: 2rem;
     border-radius: 15px;
     transition: all 0.5s ease;
 }

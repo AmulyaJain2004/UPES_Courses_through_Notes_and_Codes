@@ -125,18 +125,49 @@
                     <!-- Years will be dynamically populated here -->
                 </div>
 
+                <!-- ML-DL Intensive Training Section -->
+                <div class="mt-5 fade-in animate-on-scroll" id="ml-dl-training">
+                    <div class="accordion mb-4" id="mlDlAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_mlDl">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse_mlDl" aria-expanded="true" 
+                                        aria-controls="collapse_mlDl">
+                                    <i class="fas fa-brain me-2"></i>ML-DL Intensive Training
+                                </button>
+                            </h2>
+                            <div id="collapse_mlDl" class="accordion-collapse collapse show" 
+                                 aria-labelledby="heading_mlDl">
+                                <div class="accordion-body">
+                                    <div id="mlDlContainer">
+                                        <!-- ML-DL Training content will be dynamically populated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Resources Section -->
                 <div class="mt-5 fade-in animate-on-scroll" id="resources">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h2 class="mb-0">
-                            <i class="fas fa-tools me-2"></i>Important Resources
-                        </h2>
-                        <button class="btn btn-outline-primary" id="refreshResources">
-                            <i class="fas fa-sync-alt me-2"></i>Refresh
-                        </button>
-                    </div>
-                    <div class="row" id="resourcesContainer">
-                        <!-- Resources will be dynamically populated here -->
+                    <div class="accordion mb-4" id="resourcesAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading_resources">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" 
+                                        data-bs-target="#collapse_resources" aria-expanded="true" 
+                                        aria-controls="collapse_resources">
+                                    <i class="fas fa-tools me-2"></i>Important Resources
+                                </button>
+                            </h2>
+                            <div id="collapse_resources" class="accordion-collapse collapse show" 
+                                 aria-labelledby="heading_resources">
+                                <div class="accordion-body">
+                                    <div class="row" id="resourcesContainer">
+                                        <!-- Resources will be dynamically populated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -168,7 +199,7 @@
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="public/js/script.js"></script>
+    <script type="module" src="public/js/main.js"></script>
     <script>
         // Intro Animation Script with localStorage check
         function shouldShowIntro() {
