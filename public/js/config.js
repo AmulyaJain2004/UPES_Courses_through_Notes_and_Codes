@@ -1,5 +1,5 @@
 // Base URL for API calls
-export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://upes-courses-through-notes-and-codes.onrender.com";
 
 // Repository structure template
 export const repositoryStructure = {
