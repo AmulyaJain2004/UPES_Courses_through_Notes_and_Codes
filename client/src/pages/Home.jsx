@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
-const API_BASE_URL =
-  "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
+import { API_BASE_URL } from "../config/api";
 
 function Home() {
   const [repoData, setRepoData] = useState({
