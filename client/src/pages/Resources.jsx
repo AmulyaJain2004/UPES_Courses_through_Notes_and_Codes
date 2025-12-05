@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_BASE = "https://upes-courses-through-notes-and-codes-1.onrender.com";
+const API_BASE_URL = "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
 
 function Resources() {
   const [resources, setResources] = useState([]);
@@ -16,7 +16,7 @@ function Resources() {
   const fetchGithubContents = async (dirPath = "") => {
     try {
       const response = await fetch(
-        `${API_BASE}/github-contents/?dir_path=${dirPath}`
+        `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
       );
 
       if (!response.ok) {
