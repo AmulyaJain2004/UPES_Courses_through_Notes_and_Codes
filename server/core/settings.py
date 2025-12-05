@@ -34,10 +34,15 @@ GITHUB_TOKEN = env("GITHUB_TOKEN")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://upes-courses-through-notes-and-codes-1.onrender.com",
-    "https://upes-courses-through-notes-and-code.vercel.app",
+    # Render / production hostnames (no scheme)
+    "upes-courses-through-notes-and-codes-1.onrender.com",
+    "upes-courses-through-notes-and-code.vercel.app",
+    # Allow local development
     # "localhost",
     # "127.0.0.1",
+    # Allow Vercel preview subdomains and other onrender subdomains
+    # ".vercel.app",
+    # ".onrender.com",
 ]
 
 
@@ -70,7 +75,13 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://upes-courses-through-notes-and-code.vercel.app",
-    # "http://localhost:5173",
+    # Add any other fixed production origins here
+]
+
+# Trusted origins for CSRF (include the frontend origin with scheme)
+CSRF_TRUSTED_ORIGINS = [
+    "https://upes-courses-through-notes-and-code.vercel.app",
+    "https://upes-courses-through-notes-and-codes-1.onrender.com",
 ]
 
 
