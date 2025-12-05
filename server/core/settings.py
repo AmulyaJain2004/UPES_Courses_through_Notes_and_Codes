@@ -31,13 +31,13 @@ SECRET_KEY = env("SECRET_KEY")
 GITHUB_TOKEN = env("GITHUB_TOKEN", default=None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    # "portfolio-backend-403y.onrender.com",
-    # "amulyajain.vercel.app",
-    "localhost",
-    "127.0.0.1",
+    "https://upes-courses-through-notes-and-codes-1.onrender.com",
+    "https://upes-courses-through-notes-and-code.vercel.app",
+    # "localhost",
+    # "127.0.0.1",
 ]
 
 
@@ -69,8 +69,8 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    # "https://amulyajain.vercel.app",
-    "http://localhost:5173",
+    "https://upes-courses-through-notes-and-code.vercel.app",
+    # "http://localhost:5173",
 ]
 
 

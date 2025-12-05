@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_BASE_URL = "http://localhost:8000/api";
+const API_BASE = "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
 
 function Home() {
   const [repoData, setRepoData] = useState({
@@ -20,7 +20,7 @@ function Home() {
   const fetchGithubContents = async (dirPath = "") => {
     try {
       const response = await fetch(
-        `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
+        `${API_BASE}/github-contents/?dir_path=${dirPath}`
       );
 
       if (response.status === 429) {
