@@ -75,15 +75,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://upes-courses-through-notes-and-code.vercel.app",
+    "https://upes-courses-through-notes-and-codes-1.onrender.com",
     # Add any other fixed production origins here
 ]
-
-# Trusted origins for CSRF (include the frontend origin with scheme)
-CSRF_TRUSTED_ORIGINS = [
-    "https://upes-courses-through-notes-and-code.vercel.app",
-    "https://upes-courses-through-notes-and-codes-1.onrender.com",
-]
-
 
 ROOT_URLCONF = "core.urls"
 
