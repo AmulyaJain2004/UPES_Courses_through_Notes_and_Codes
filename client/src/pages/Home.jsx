@@ -17,10 +17,11 @@ function Home() {
   }, []);
 
   const fetchGithubContents = async (dirPath = "") => {
+    const url = `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`;
+    console.log("Fetching from:", url); // Debug log
+
     try {
-      const response = await fetch(
-        `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
-      );
+      const response = await fetch(url);
 
       // If the server returns JSON, parse and handle it.
       const contentType = response.headers.get("content-type") || "";
@@ -69,7 +70,11 @@ function Home() {
         );
       }
     } catch (err) {
-      console.error("Error fetching:", err);
+      console.error(
+        "Error fetching from:",
+        `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
+      );
+      console.error("Error details:", err);
       throw err;
     }
   };

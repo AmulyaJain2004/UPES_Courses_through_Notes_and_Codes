@@ -13,10 +13,11 @@ function Resources() {
   }, []);
 
   const fetchGithubContents = async (dirPath = "") => {
+    const url = `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`;
+    console.log("Resources - Fetching from:", url);
+
     try {
-      const response = await fetch(
-        `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
-      );
+      const response = await fetch(url);
 
       const contentType = response.headers.get("content-type") || "";
 

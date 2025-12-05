@@ -24,8 +24,11 @@ function Contact() {
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
 
+    const url = `${API_BASE_URL}/contact/`;
+    console.log("Contact - Posting to:", url);
+
     try {
-      const response = await fetch(`${API_BASE_URL}/contact/`, {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
