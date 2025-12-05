@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-const API_BASE_URL = "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
+const API_BASE_URL =
+  "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
 
 function Resources() {
   const [resources, setResources] = useState([]);
@@ -19,11 +20,34 @@ function Resources() {
         `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
       );
 
+      const contentType = response.headers.get("content-type") || "";
+
       if (!response.ok) {
-        throw new Error("Failed to fetch resources");
+        if (contentType.includes("application/json")) {
+          const errorData = await response.json();
+          throw new Error(
+            errorData.error || errorData.message || "Failed to fetch resources"
+          );
+        }
+        const text = await response.text();
+        const brief = text.replace(/\n+/g, " ").slice(0, 500);
+        throw new Error(
+          brief || "Failed to fetch resources (non-JSON response)"
+        );
       }
 
-      return await response.json();
+      if (contentType.includes("application/json")) {
+        return await response.json();
+      }
+      const text = await response.text();
+      try {
+        return JSON.parse(text);
+      } catch (e) {
+        throw new Error(
+          "Unexpected non-JSON response from server: " +
+            (text && text.slice ? text.slice(0, 500) : String(text))
+        );
+      }
     } catch (err) {
       console.error("Error fetching:", err);
       throw err;

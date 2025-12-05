@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-const API_BASE_URL = "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
+const API_BASE_URL =
+  "https://upes-courses-through-notes-and-codes-1.onrender.com/api";
 
 function Home() {
   const [repoData, setRepoData] = useState({
@@ -23,20 +24,52 @@ function Home() {
         `${API_BASE_URL}/github-contents/?dir_path=${dirPath}`
       );
 
+      // If the server returns JSON, parse and handle it.
+      const contentType = response.headers.get("content-type") || "";
+
       if (response.status === 429) {
-        const errorData = await response.json();
+        // Try to parse JSON body, but fall back to text if not JSON
+        if (contentType.includes("application/json")) {
+          const errorData = await response.json();
+          throw new Error(
+            errorData.message ||
+              "GitHub API rate limit exceeded. Please try again later."
+          );
+        }
+        const text = await response.text();
         throw new Error(
-          errorData.message ||
-            "GitHub API rate limit exceeded. Please try again later."
+          text || "GitHub API rate limit exceeded. Please try again later."
         );
       }
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to fetch data");
+        // Attempt to parse JSON; if response is HTML (Django error page), read text
+        if (contentType.includes("application/json")) {
+          const errorData = await response.json();
+          throw new Error(
+            errorData.error || errorData.message || "Failed to fetch data"
+          );
+        }
+        const text = await response.text();
+        // Trim HTML and provide a concise message if possible
+        const brief = text.replace(/\n+/g, " ").slice(0, 500);
+        throw new Error(brief || "Failed to fetch data (non-JSON response)");
       }
 
-      return await response.json();
+      // Successful response: prefer JSON, but guard against non-JSON bodies
+      if (contentType.includes("application/json")) {
+        return await response.json();
+      }
+      // If backend returned HTML unexpectedly, return text to help debugging
+      const text = await response.text();
+      try {
+        return JSON.parse(text);
+      } catch (e) {
+        throw new Error(
+          "Unexpected non-JSON response from server: " +
+            (text && text.slice ? text.slice(0, 500) : String(text))
+        );
+      }
     } catch (err) {
       console.error("Error fetching:", err);
       throw err;
