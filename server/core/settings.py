@@ -28,7 +28,7 @@ env.read_env(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = env("SECRET_KEY")
 
 # GitHub API token (optional, for higher rate limits)
-GITHUB_TOKEN = env("GITHUB_TOKEN", default=None)
+GITHUB_TOKEN = env("GITHUB_TOKEN")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
