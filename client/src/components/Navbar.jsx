@@ -18,7 +18,7 @@ function Navbar() {
       <div className="container">
         <div className="navbar-content">
           <Link to="/" className="navbar-brand">
-            <span className="brand-icon">🎓</span>
+            <img src="/logo_upes.webp" alt="UPES Logo" className="brand-icon" />
             <span className="brand-text">UPES Repository</span>
           </Link>
 

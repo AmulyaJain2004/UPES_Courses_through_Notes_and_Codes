@@ -942,7 +942,14 @@ body {
 }
 
 .brand-icon {
-  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brand-icon:hover {
+  transform: rotate(5deg) scale(1.1);
 }
 
 .navbar-links {
