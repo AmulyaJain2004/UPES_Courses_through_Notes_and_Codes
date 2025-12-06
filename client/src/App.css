@@ -460,6 +460,7 @@ body {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity var(--transition-base);
@@ -707,10 +708,6 @@ body {
 .file-item:hover .file-name {
   font-weight: 600;
 }
-  display: block;
-  text-align: left;
-  width: 100%;
-}
 
 .courses-grid {
   display: grid;
@@ -747,8 +744,6 @@ body {
   transform: translateX(6px) translateY(-2px);
   box-shadow: var(--hover-shadow-light);
   color: var(--primary-color);
-}
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
 .course-icon {
@@ -1521,9 +1516,6 @@ body {
   color: var(--text-secondary);
   font-size: 1rem;
   font-weight: 500;
-}
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
 }
 
 .navbar-brand:hover {

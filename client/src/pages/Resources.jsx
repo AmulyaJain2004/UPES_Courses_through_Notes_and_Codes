@@ -124,11 +124,8 @@ function Resources() {
     const filteredContents = hasContents ? filterItems(isExpanded) : [];
 
     return (
-      <div
-        key={item.path}
-        className={`mb-2 ${level > 0 ? 'ml-4' : ''}`}
-      >
-        <div 
+      <div key={item.path} className={`mb-2 ${level > 0 ? "ml-4" : ""}`}>
+        <div
           className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer transition-all duration-200 group/folder"
           onClick={() => toggleSection(item.path)}
         >
@@ -211,8 +208,8 @@ function Resources() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
               {filterItems(resources).map((resource) =>
                 resource.type === "dir" ? (
-                  <div 
-                    key={resource.path} 
+                  <div
+                    key={resource.path}
                     className="group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-700 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -233,33 +230,35 @@ function Resources() {
                       </h3>
                       <div className="h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300 rounded-full"></div>
                     </div>
-                    
-                    {expandedSections[resource.path] && Array.isArray(expandedSections[resource.path]) && (
-                      <div className="px-6 pb-6 space-y-2 animate-fadeIn">
-                        {filterItems(expandedSections[resource.path]).map((subItem) =>
-                          subItem.type === "dir" ? (
-                            <div key={subItem.path} className="pl-4">
-                              {renderFolder(subItem, 0)}
-                            </div>
-                          ) : (
-                            <a
-                              key={subItem.path}
-                              href={subItem.html_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 group/file"
-                            >
-                              <span className="text-2xl transform group-hover/file:scale-125 transition-transform duration-200">
-                                {getFileIcon(subItem.name)}
-                              </span>
-                              <span className="text-sm text-gray-700 dark:text-gray-300 group-hover/file:text-blue-600 dark:group-hover/file:text-blue-400 transition-colors duration-200">
-                                {subItem.name}
-                              </span>
-                            </a>
-                          )
-                        )}
-                      </div>
-                    )}
+
+                    {expandedSections[resource.path] &&
+                      Array.isArray(expandedSections[resource.path]) && (
+                        <div className="px-6 pb-6 space-y-2 animate-fadeIn">
+                          {filterItems(expandedSections[resource.path]).map(
+                            (subItem) =>
+                              subItem.type === "dir" ? (
+                                <div key={subItem.path} className="pl-4">
+                                  {renderFolder(subItem, 0)}
+                                </div>
+                              ) : (
+                                <a
+                                  key={subItem.path}
+                                  href={subItem.html_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 group/file"
+                                >
+                                  <span className="text-2xl transform group-hover/file:scale-125 transition-transform duration-200">
+                                    {getFileIcon(subItem.name)}
+                                  </span>
+                                  <span className="text-sm text-gray-700 dark:text-gray-300 group-hover/file:text-blue-600 dark:group-hover/file:text-blue-400 transition-colors duration-200">
+                                    {subItem.name}
+                                  </span>
+                                </a>
+                              )
+                          )}
+                        </div>
+                      )}
                   </div>
                 ) : (
                   <a
