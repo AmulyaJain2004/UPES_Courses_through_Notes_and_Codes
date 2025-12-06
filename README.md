@@ -4,7 +4,7 @@ Welcome to the UPES Programming Courses repository! This repository contains all
 
 ## Access Notes Here (Currently in Development)
 
-[Notes Website](https://amulyajain2004.github.io/UPES_Courses_through_Notes_and_Codes/)
+[Notes Website](https://upes-courses-through-notes-and-code.vercel.app/)
 
 ## Table of Contents
 
