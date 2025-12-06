@@ -4,7 +4,6 @@ import { API_BASE_URL } from "../config/api";
 function Home() {
   const [repoData, setRepoData] = useState({
     years: [],
-    resources: [],
     mlDlTraining: [],
   });
   const [loading, setLoading] = useState(true);
@@ -89,17 +88,12 @@ function Home() {
         .filter((item) => item.name.includes("year"))
         .sort((a, b) => a.name.localeCompare(b.name));
 
-      const resources = rootContents.filter((item) =>
-        item.name.includes("Important_Resources")
-      );
-
       const mlDlTraining = rootContents.filter((item) =>
         item.name.includes("ML_DL_IntensiveTraining")
       );
 
       setRepoData({
         years,
-        resources,
         mlDlTraining,
       });
     } catch (err) {
@@ -290,17 +284,6 @@ function Home() {
               </div>
             </section>
           )}
-
-          <section className="resources-section">
-            <h2 className="section-title">📖 Important Resources</h2>
-            <div className="resources-grid">
-              {repoData.resources.map((resourceFolder) => (
-                <div key={resourceFolder.path} className="resource-category">
-                  {renderFolder(resourceFolder)}
-                </div>
-              ))}
-            </div>
-          </section>
         </div>
       </main>
     </>
