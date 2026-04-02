@@ -4,4 +4,4 @@ __pycache__
 TODO.txt
 node_modules/
 .env
-venv/
+.venv/
